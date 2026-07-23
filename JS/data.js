@@ -30,10 +30,12 @@ function toggleTheme() {
 
 //--------------Active Class for Current Page-------------
 function highlightActiveNavLink() {
-  const currentPage = window.location.pathname.split('/').pop(); // e.g. "clients.html"
+  const currentPage = window.location.pathname.split('/').pop().replace('.html', ''); 
 
   document.querySelectorAll('header nav a, header ul li a').forEach(link => {
-    const linkPage = link.getAttribute('href');
+    const linkPage = link.getAttribute('href')
+    .replace('.html', '')
+    .replace(/^\//, '');
     if (linkPage === currentPage) {
       link.classList.add('active');
     } else {
