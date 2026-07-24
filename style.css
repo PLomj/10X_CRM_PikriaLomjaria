@@ -90,8 +90,6 @@ button:hover{
 }
 
 
-
-/* --- Apply variables throughout your site --- */
 body {
     background-color: var(--bg);
     color: var(--text);
