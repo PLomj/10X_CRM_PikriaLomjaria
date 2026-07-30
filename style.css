@@ -106,7 +106,7 @@ p{
 }
 
 .dashboardHeader ul li a.active,
-.clientsHeader ul li a.active {
+.clientsHeader ul li a.active, .profileHeader ul li a.active {
     color: var(--hover);
     font-weight: bold;
     /*border-bottom: 2px solid var(--accent);*/

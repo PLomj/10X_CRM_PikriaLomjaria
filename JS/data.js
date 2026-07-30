@@ -46,7 +46,7 @@ function highlightActiveNavLink() {
   });
 }
 
-// Load clients from localStorage, or fetch initial data from DummyJSON if first visit
+// Load clients from localStorage, or fetch initial data from DummyJSON if first visit ---------------------old version without error handling
 
 // --- crm_clients: fetched from DummyJSON, first-time only ---    1st version, without error handling
 // async function loadClients() {

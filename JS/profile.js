@@ -1,24 +1,20 @@
+//--------------------Protects Clients page to open without log in----------
+const session = requireAuth();
+
+//--------------Handles theme changing-------------
+initTheme();
+
+document.getElementById('themeToggleBtn').addEventListener('click', toggleTheme);
 
 
-/* ============================================================
-   STORAGE HELPERS
-   ============================================================ */
-function readJSON(key, fallback = null) {
-  try {
-    const raw = localStorage.getItem(key);
-    return raw ? JSON.parse(raw) : fallback;
-  } catch (err) {
-    console.warn(`Corrupted "${key}" in localStorage:`, err);
-    return fallback;
-  }
-}
+//---------------In the Header Active page------
+highlightActiveNavLink();
 
-function writeJSON(key, value) {
-  try {
-    localStorage.setItem(key, JSON.stringify(value));
-    return true;
-  } catch (err) {
-    console.error(`Could not write "${key}":`, err);
-    return false;
-  }
-}
+
+
+
+ 
+
+
+//-------------------Log Out--------
+document.getElementById('logoutBtn').addEventListener('click', logout);

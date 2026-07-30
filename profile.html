@@ -13,7 +13,7 @@
         <ul>
             <li><a href="dashboard.html">Dashboard</a></li>
             <li><a href="clients.html">Clients</a></li>
-            <li><a href="#">Profile</a></li>
+            <li><a href="profile.html">Profile</a></li>
         </ul>
         <button id="themeToggleBtn">🌙 Dark Mode</button>
         <button id="logoutBtn"  style="padding: 0 2%;">Logout</button> 
@@ -27,11 +27,10 @@
         <div id="profile">
             <h2>Edit Profile</h2>
             <form id="profileForm" novalidate>
-                <label for="name">Full Name</label>
                 <input type="text" placeholder="Full Name" id="name" autocomplete="name">
                 <p class="errorMsg" id="nameError"></p>
 
-                <label for="company">Company <span class="optional">(optional)</span></label>
+                
                 <input type="text" placeholder="Company" id="company" autocomplete="organization">
 
                 <button type="submit" id="saveChanges">Save Changes</button>
