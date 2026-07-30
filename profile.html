@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="profileHeader">
@@ -17,28 +18,8 @@
         <button id="themeToggleBtn">🌙 Dark Mode</button>
         <button id="logoutBtn"  style="padding: 0 2%;">Logout</button> 
     </header>
-    <main>
-        <h1 id="userName"></h1>
-        <p id="userMail"></p>
-        <p id="memberSince"></p>
-        <div id="profile">
-            <h1>Edit Profile</h1>
-            <input type="text" placeholder="Full Name" id="name">
-            <input type="text" placeholder="Company" id="company">
-            <button id="saveChanges">Save Changes</button>
-        </div>
-        <div id="password">
-            <h1>Change Password</h1>
-            <input type="text" placeholder="Current password" id="currentPassword">
-            <input type="text" placeholder="New Password" id="newPassword">
-            <input type="text" placeholder="Confirm New Password" id="confirmNew">
-            <button>Change New Password</button>
-        </div>
-        <div id="data">
-            <h1>Data</h1>
-        </div>
-    </main>
-    <main>
+    
+    <main class="profileMain">
         <h1 id="userName"></h1>
         <p id="userMail"></p>
         <p id="memberSince"></p>

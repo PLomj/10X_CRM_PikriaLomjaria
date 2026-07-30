@@ -605,3 +605,45 @@ h4{
     color: var(--text);
     opacity: 0.8;
 }
+
+
+/*---------------------Profile Page Styles---------------------*/
+.profileHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1px;
+    margin: 0 10% 0 10%;
+    background-color: var(--navbar);
+}
+
+.profileMain{
+    margin: 5% 10% 0 10%;
+}
+
+.errorMsg {
+  color: #d33;
+  font-size: 0.85rem;
+  margin: 0.25rem 0 0;
+  min-height: 1.1em;      /* reserves space so the form doesn't jump */
+  visibility: hidden;
+}
+.errorMsg.visible { visibility: visible; }
+
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translate(-50%, 1rem);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  background: #222;
+  color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s, transform 0.25s;
+}
+.toast.visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
