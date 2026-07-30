@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<body>
+    <header class="profileHeader">
+        <h1 class="tenX">10X </h1>
+        <h1 class="crm">CRM</h1>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="clients.html">Clients</a></li>
+            <li><a href="#">Profile</a></li>
+        </ul>
+        <button id="themeToggleBtn">🌙 Dark Mode</button>
+        <button id="logoutBtn"  style="padding: 0 2%;">Logout</button> 
+    </header>
+    <main>
+        <h1 id="userName"></h1>
+        <p id="userMail"></p>
+        <p id="memberSince"></p>
+        <div id="profile">
+            <h1>Edit Profile</h1>
+            <input type="text" placeholder="Full Name" id="name">
+            <input type="text" placeholder="Company" id="company">
+            <button id="saveChanges">Save Changes</button>
+        </div>
+        <div id="password">
+            <h1>Change Password</h1>
+            <input type="text" placeholder="Current password" id="currentPassword">
+            <input type="text" placeholder="New Password" id="newPassword">
+            <input type="text" placeholder="Confirm New Password" id="confirmNew">
+            <button>Change New Password</button>
+        </div>
+        <div id="data">
+            <h1>Data</h1>
+        </div>
+    </main>
+    <main>
+        <h1 id="userName"></h1>
+        <p id="userMail"></p>
+        <p id="memberSince"></p>
+
+        <div id="profile">
+            <h2>Edit Profile</h2>
+            <form id="profileForm" novalidate>
+                <label for="name">Full Name</label>
+                <input type="text" placeholder="Full Name" id="name" autocomplete="name">
+                <p class="errorMsg" id="nameError"></p>
+
+                <label for="company">Company <span class="optional">(optional)</span></label>
+                <input type="text" placeholder="Company" id="company" autocomplete="organization">
+
+                <button type="submit" id="saveChanges">Save Changes</button>
+            </form>
+        </div>
+
+        <div id="password">
+            <h2>Change Password</h2>
+            <form id="passwordForm" novalidate>
+                <input type="password" placeholder="Current password" id="currentPassword" autocomplete="current-password">
+                <p class="errorMsg" id="currentPasswordError"></p>
+
+                <input type="password" placeholder="New Password" id="newPassword" autocomplete="new-password">
+                <p class="errorMsg" id="newPasswordError"></p>
+
+                <input type="password" placeholder="Confirm New Password" id="confirmNew" autocomplete="new-password">
+                <p class="errorMsg" id="confirmNewError"></p>
+
+                <button type="submit" id="changePasswordBtn">Change Password</button>
+            </form>
+        </div>
+
+        <div id="data">
+            <h2>Data</h2> 
+        </div>
+    </main>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+
+    <script src="JS/data.js"></script>
+    <script src="JS/profile.js"></script>
+</body>
+</html>
