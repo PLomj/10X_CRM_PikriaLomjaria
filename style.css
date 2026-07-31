@@ -621,6 +621,16 @@ h4{
     margin: 5% 10% 0 10%;
 }
 
+#userName, #userMail, #memberSince{
+    color: var(--hover)
+}
+
+#userMail::after {
+    content: '• 10X CRM';
+    margin-left: 12px;
+    color: var(--hover);
+}
+
 .errorMsg {
   color: #d33;
   font-size: 0.85rem;

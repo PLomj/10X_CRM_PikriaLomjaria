@@ -97,6 +97,7 @@ document
       email,
       company,
       password,
+      createdAt: new Date().toISOString(),
     };
     users.push(newUser);
     saveUsers(users);
