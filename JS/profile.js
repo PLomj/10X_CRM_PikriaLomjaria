@@ -29,7 +29,53 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   });
 
- 
+  //------------Change Name, Update crm_users, ----------------
+
+ document.getElementById("profileForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const form = this;
+  const fullName = form.elements["fullName"].value.trim();
+  const company = form.elements["company"].value.trim();
+
+  let isValid = true;
+
+  if (fullName.length < 3) {
+    setError("fullName", "Full name must be at least 3 characters");
+    isValid = false;
+  } else {
+    setValid("fullName");
+  }
+
+  setValid("company");                                                     // optional field, always valid
+
+  if (!isValid) {
+    showToast("Please fix the errors above", "error");
+    return;
+  }
+
+  // --- Find and update this user in crm_users ---
+  const session = getSession();
+  const users = loadUsers();
+  const index = users.findIndex((u) => u.id === session.id);
+
+  if (index === -1) {
+    showToast("Could not find your account", "error");
+    return;
+  }
+
+  users[index].fullName = fullName;
+  users[index].company = company;
+  saveUsers(users);
+
+  // --- Refresh the session so it matches the updated record ---
+  setSession(users[index]);
+
+  // --- Reflect the change immediately on this page ---
+  document.getElementById("userName").textContent = users[index].fullName;
+
+  showToast("Profile updated ✓", "success");
+});
 
 
 //-------------------Log Out--------

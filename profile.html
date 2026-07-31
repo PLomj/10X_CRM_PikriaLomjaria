@@ -27,11 +27,11 @@
         <div id="profile">
             <h2>Edit Profile</h2>
             <form id="profileForm" novalidate>
-                <input type="text" placeholder="Full Name" id="name" autocomplete="name">
-                <p class="errorMsg" id="nameError"></p>
+                <input type="text" name="fullName" placeholder="Full Name" id="name" autocomplete="name">
+                <p class="error-message" id="fullName-error"></p>
 
-                
-                <input type="text" placeholder="Company" id="company" autocomplete="organization">
+                <input type="text" name="company" placeholder="Company" id="company" autocomplete="organization">
+                <p class="error-message" id="company-error"></p>
 
                 <button type="submit" id="saveChanges">Save Changes</button>
             </form>
@@ -61,6 +61,7 @@
 
 
     <script src="JS/data.js"></script>
+    <script src="JS/validation.js"></script>
     <script src="JS/profile.js"></script>
 </body>
 </html>
