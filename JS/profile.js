@@ -143,5 +143,24 @@ document.getElementById("passwordForm").addEventListener("submit", function (e) 
 });
 
 
+//-------------Reset Client Data------------
+document.getElementById("resetData").addEventListener("click", async function () {
+  const confirmed = window.confirm(
+    "This will delete all client data and reload fresh demo data from the API. Continue?"
+  );
+  if (!confirmed) return;
+
+  localStorage.removeItem("crm_clients");
+
+  try {
+    await getEnrichedClients();
+    showToast("CRM data reset ✓", "success");
+  } catch (err) {
+    console.error("Failed to reload client data:", err);
+    showToast("Could not reload client data", "error");
+  }
+});
+
+
 //-------------------Log Out--------
 document.getElementById('logoutBtn').addEventListener('click', logout);
