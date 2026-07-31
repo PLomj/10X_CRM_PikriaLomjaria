@@ -40,14 +40,14 @@
         <div id="password">
             <h2>Change Password</h2>
             <form id="passwordForm" novalidate>
-                <input type="password" placeholder="Current password" id="currentPassword" autocomplete="current-password">
-                <p class="errorMsg" id="currentPasswordError"></p>
+                <input type="password" name="currentPassword" placeholder="Current password" id="currentPassword" autocomplete="current-password">
+                <p class="error-message" id="currentPassword-error"></p>
 
-                <input type="password" placeholder="New Password" id="newPassword" autocomplete="new-password">
-                <p class="errorMsg" id="newPasswordError"></p>
+                <input type="password" name="newPassword" placeholder="New Password" id="newPassword" autocomplete="new-password">
+                <p class="error-message" id="newPassword-error"></p>
 
-                <input type="password" placeholder="Confirm New Password" id="confirmNew" autocomplete="new-password">
-                <p class="errorMsg" id="confirmNewError"></p>
+                <input type="password" name="confirmNew" placeholder="Confirm New Password" id="confirmNew" autocomplete="new-password">
+                <p class="error-message" id="confirmNew-error"></p>
 
                 <button type="submit" id="changePasswordBtn">Change Password</button>
             </form>

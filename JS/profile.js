@@ -78,5 +78,70 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+//-------------------change password logic-------
+document.getElementById("passwordForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const form = this;
+  const currentPassword = form.elements["currentPassword"].value;
+  const newPassword = form.elements["newPassword"].value;
+  const confirmNew = form.elements["confirmNew"].value;
+
+  const session = getSession();
+  const users = loadUsers();
+  const index = users.findIndex((u) => u.id === session.id);
+
+  if (index === -1) {
+    showToast("Could not find your account", "error");
+    return;
+  }
+
+  const actualCurrentPassword = users[index].password;
+  let isValid = true;
+
+  // Current password must match what's stored
+  if (currentPassword !== actualCurrentPassword) {
+    setError("currentPassword", "Current password is incorrect");
+    isValid = false;
+  } else {
+    setValid("currentPassword");
+  }
+
+  // New password: must differ from current, and meet complexity rules
+  const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/;
+  if (newPassword === actualCurrentPassword) {
+    setError("newPassword", "New password must be different from the current one");
+    isValid = false;
+  } else if (!passwordPattern.test(newPassword)) {
+    setError("newPassword", "Password must be at least 8 characters and contain a letter and a number");
+    isValid = false;
+  } else {
+    setValid("newPassword");
+  }
+
+  // Confirm new password
+  if (confirmNew !== newPassword) {
+    setError("confirmNew", "Passwords do not match");
+    isValid = false;
+  } else {
+    setValid("confirmNew");
+  }
+
+  if (!isValid) {
+    showToast("Please fix the errors above", "error");
+    return;
+  }
+
+  // --- Save new password ---
+  users[index].password = newPassword;
+  saveUsers(users);
+  setSession(users[index]); // keep session in sync with crm_users
+
+  form.reset();
+  clearAllValidation(form);
+  showToast("Password changed ✓", "success");
+});
+
+
 //-------------------Log Out--------
 document.getElementById('logoutBtn').addEventListener('click', logout);
