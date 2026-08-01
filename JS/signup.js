@@ -45,8 +45,8 @@ document
     }
 
     //more requirements for password.
-    // if (password.length < 6) {
-    //     setError('password', 'Password must be at least 6 characters');
+    // if (password.length < 8) {
+    //     setError('password', 'Password must be at least 8 characters');
     //     isValid = false;
     // } else if (!/\d/.test(password)) {
     //     setError('password', 'Password must contain at least one number');

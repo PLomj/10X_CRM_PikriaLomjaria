@@ -36,3 +36,6 @@ function showToast(message, type) {
     toast.className = "toast";
   }, 3000);
 }
+
+
+//setError, setValid, showToast used in profile.js
