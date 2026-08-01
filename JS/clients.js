@@ -11,6 +11,7 @@ document.getElementById('themeToggleBtn').addEventListener('click', toggleTheme)
 highlightActiveNavLink();
 
 
+
 //-----------Loads all client info into the cards-----------
 async function renderClients() {
 
@@ -79,7 +80,7 @@ const addClientForm = document.getElementById('addClientForm');
 
 document.getElementById('openModalBtn').addEventListener('click', () => {
   //modal.style.display = 'flex';      ---------------------while style was into HTML file and caused conflict with CSS display: flex
-  console.log('button clicked'); // temporary debug line
+  
   modal.classList.add('show');
 });
 
@@ -439,3 +440,4 @@ document.getElementById('remindBtn').addEventListener('click', async function ()
 
 //-------------------Log Out--------
 document.getElementById('logoutBtn').addEventListener('click', logout);
+
