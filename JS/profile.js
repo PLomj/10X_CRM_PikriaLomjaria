@@ -119,6 +119,22 @@ document.getElementById("passwordForm").addEventListener("submit", function (e) 
     setValid("newPassword");
   }
 
+
+  // if (password.length < 8) {
+    //     setError('password', 'Password must be at least 8 characters');
+    //     isValid = false;
+    // } else if (!/\d/.test(password)) {
+    //     setError('password', 'Password must contain at least one number');
+    //     isValid = false;
+    // } else if (!/[A-Z]/.test(password)) {
+    //     setError('password', 'Password must contain at least one uppercase letter');
+    //     isValid = false;
+    // } else {
+    //     setValid('password');
+    // }
+
+
+
   // Confirm new password
   if (confirmNew !== newPassword) {
     setError("confirmNew", "Passwords do not match");
