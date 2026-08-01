@@ -8,16 +8,16 @@
 
 -----------JSON.stringify(), JSON.parse() in action - First one converts a JavaScript object into JSON text before sending it, Second one converts received JSON text back into a JavaScript object.
 
---------------crm_user vs crm_client
+--------------crm_user vs crm_client - Now they are Local Storage keys. If I transformed project into real one and used server-side services too they would become database tables. While front-end don't cooperate to the database directly, there would be mediators - API endpoint: POST /api/users, POST /api/clients.
 
-----------crm_session
+----------crm_session - Stores information about the currently logged-in user.
 
---------Auth Guard
+--------Auth Guard - Authentication checks the identity of a user, guard checks whether a user can access something.
 
---------Hashing Passwords
+--------Hashing Passwords - the process of converting a user's password into a fixed-length, unreadable string before storing it. მომხმარებლის პაროლი: mypassword123 => ჰეშირების ცალმხრივი პროცესი => სერვერზე ბაზაში შენახული პაროლი: $2b$12$k7F8s9dKxP.....
 
--------Modal
+-------Modal - A UI element (a window or box) that appears on the current page content and requires the user to interact with it before continuing.
 
----------Sort Selector Chips
+---------Sort Selector Chips - small, compact elements that represent information, a choice, or an action.
 
-------Toast
+------Toast - a small temporary notification message that appears on the screen to inform the user about something and then disappears automatically.
