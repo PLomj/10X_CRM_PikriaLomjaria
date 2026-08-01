@@ -34,9 +34,9 @@ PROMPT EXAMPLE 4: "My next step is statistic cards - 4 in total. They have to sh
 Total Clients - clients.length.
 Active Deals - clients, clients whose status is neither 'Won' nor 'Lost'. (filter().length).
 Won Revenue - "Won" clients' dealValue sum (filter + reduce), format - $12,500.
-New This Week - clients created within the last 7 days.
+New This Week - clients created within the last 7 days."
 
-After that I reviewed and understood the generated code.", if something was not clear also explained with the help of the AI tools.
+After that I reviewed and understood the generated code. If something was not clear also explained with the help of the AI tools.
 
 The last interesting issue I encountered was after deploying the link the navigation bar items lost their active class.
 
